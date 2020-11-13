@@ -1,22 +1,24 @@
 {
-  "name": "edinsonningles-web",
+  "name": "b-html-boilerplate-edi",
   "version": "1.0.0",
-  "description": "// Landing Page/ One Page",
+  "description": "// Website",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "master"
+    "url": "git+https://github.com/thirdknight/b-html-boilerplate-edi.git"
   },
-  "author": "",
+  "author": "Edinson Ningles",
   "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.26.12",
-    "gulp-sass": "^4.1.0"
+  "bugs": {
+    "url": "https://github.com/thirdknight/b-html-boilerplate-edi/issues"
   },
-  "dependencies": {
-    "gulp": "^4.0.2"
+  "homepage": "https://github.com/thirdknight/b-html-boilerplate-edi#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
   }
 }
