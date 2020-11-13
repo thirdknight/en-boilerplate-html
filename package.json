@@ -1,0 +1,22 @@
+{
+  "name": "edinsonningles-web",
+  "version": "1.0.0",
+  "description": "// Landing Page/ One Page",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "master"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "gulp-sass": "^4.1.0"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
