@@ -1,32 +1,87 @@
-// Gulp v4
+// config
+const localUrl = 'localhost/b-html-boilerplate-edi/public';
 
+const srcDir = 'src/';
+const cssPath = 'src/scss/styles.scss';
+const jsPath = 'src/js/**/*.js';
+
+const { src, series, parallel, dest, watch } = require('gulp');
+// dependecies
 const gulp = require('gulp');
+const browsersync = require('browser-sync').create();
+const imagemin = require('gulp-imagemin');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 const sass = require('gulp-sass');
-const browserSync = require('browser-sync').create();
+const concat = require('gulp-concat');
+const terser = require('gulp-terser');
+const sourcemaps = require('gulp-sourcemaps');
+const babel = require('gulp-babel');
+const plumber = require('gulp-plumber');
 
-//compile SCSS into CSS
-function style() {
-    // 1. where is my scss file
-    return gulp.src('./scss/**/*.scss')
-    // 2. pass that file through sass compiler
-    .pipe(sass().on('error', sass.logError))
-    // 3. where do I save the compiled CSS
-    .pipe(gulp.dest('./css'))
-    // 4. stream changes to all browser
-    .pipe(browserSync.stream());
+const postcssPlugins = [ 
+  autoprefixer(),
+  cssnano()
+];
+
+function copyHtml() {
+  return src(srcDir + '*.html')
+  .pipe(gulp.dest('public'));
 }
 
-function watch() {
-    browserSync.init({
-        server: {
-            baseDir: './'
-        }
-    });
-    // gulp watch for scss, browserSync and js, comment what you don't need.
-    gulp.watch('./scss/**/*.scss', style); 
-    gulp.watch('./*.html').on('change', browserSync.reload);
-    // gulp.watch('./js/**/*.js').on('change', browserSync.reload); 
+function imgTask() {
+  return src(srcDir + 'assets/images/*')
+  .pipe(imagemin())
+  .pipe(gulp.dest('public/images'));
+}
+// Compile CSS from Sass
+function buildStyles() {
+  return src(cssPath)
+  .pipe(sourcemaps.init())
+  .pipe(sass())
+  .pipe(postcss(postcssPlugins))
+  .pipe(sourcemaps.write('../../src/sourcemaps'))
+  .pipe(dest('public/css'))
+  .pipe(browsersync.reload({ stream: true }));
+}
+//Build Scripts
+function buildScript() {
+  return(src(jsPath))
+  .pipe(sourcemaps.init())
+  .pipe(plumber())
+  .pipe(babel({
+    presets: [
+      ['@babel/env', {
+        modules: false
+      }]
+    ]
+  }))
+  .pipe(concat('script.js'))
+  .pipe(terser())
+  .pipe(sourcemaps.write('../sourcemaps'))
+  .pipe(dest('public/js'))
+  .pipe(browsersync.reload({ stream: true }));
 }
 
-exports.style = style;
-exports.watch = watch;
+function browserSync(done) {
+  browsersync.init({
+    proxy: localUrl,
+  });
+  done();
+}
+
+function watchTask() {
+  watch([cssPath, jsPath], { interval: 1000 }, parallel(buildStyles, buildScript));
+}
+
+// Exports commands
+exports.buildScript = buildScript; //$gup buildScript
+exports.sass = buildStyles;  // $gulp sass
+exports.imgTask = imgTask;   //$gulp imgTask
+exports.copyHtml = copyHtml; // $gulp copyHtml
+exports.browserSync = browserSync;
+exports.default = series(
+  parallel(copyHtml, imgTask, buildScript, buildStyles, browserSync),
+  watchTask // $gulp
+);
