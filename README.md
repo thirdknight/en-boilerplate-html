@@ -22,20 +22,6 @@ $ node -v
   npm i -D gulp-plumber
   npm i -D browser-sync 
   
-   
-
-
-  
-
-
-
-- Create package-lock.json and node_moudeles for gulp, sass     
-  and browser-sync with: 
-  $npm install --save-dev gulp gulp-sass browser-sync //browser-sync work only with index.html    but not with index.php
-  
-- Create gulpfile.js and copy the script
-- run:
-   gulp watch
 
 //Frontend
 - Add normalize
@@ -45,13 +31,6 @@ $ node -v
 - create favicon: https://favicon.io/favicon-generator/
   Background: square, Lemonada, font-size:60
 - Search images
-
-root
-|- package.json
-|- index.html
-|- /src
-  |- index.js
-
 
 
 scss
