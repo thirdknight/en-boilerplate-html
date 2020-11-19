@@ -1,49 +1,50 @@
-// Website
+# Gulp-Boilerplate01
 
-- Create index.html or index.php for index.php we need create Folder include/a_config.php
+This is a boilerplate for a Gulp files If you are lazy like me and are always on the watch out of how you can optimize your workflow
+as a web developer this is the right video for you. 
+Today we are going to learn what Gulp is and how you can use it to avoid boring repetitive steps especially
+in regards to deploying a html css javascript website. 
 
-- Check in the Terminal: edinson@Edinsons-MBP gulpv4-sass-browsersync-edi
-$ node -v 
+Before we start, around two years ago gulp updated from version 3 to version 4. 
+If you see code on stack overflow or somewhere else on the internet like this, where there is no function statement in the beginning. 
+This is the old syntax which most probably is not going to work with Gulp 4. 
 
-- Create project, npm init is going to initialize things within      
-  individual project
-  $ npm init -y
-- Install Gulp Globally: is preferred because it allows you to use different    
-  versions of gulp
-  $ npm i gulp-cli -g
-- Install Gulp as dev dependency(The node_modules will be created)
+So either install gulp 3 or learn here how it’s done with gulp version 4. 
+So what is Gulp, Gulp says: gulp is a toolkit for automating painful or time-consuming tasks in your development workflow,
+so you can stop messing around and build something. 
+
+It’s also called toolkit or task runner A couple of practical examples can be, with gulp you can automate image optimization,
+copy files, rename files, uglify CSS or concatinate Javascript files with just a command in the terminal. 
+
+Alternative To Gulp, even if not directly, are Grunt, Webpack or direct npm scripts. 
+
+Here the steps: 
+1. npm init 
+2. Install Gulp Globally 
+3. CD in the project folder 
+4. Install Gulp as dev dependency 
+5. Create Gulpfile.js 
+6. Import gulp and deconstruct variables. 
+7. Let's go... 
+
+Plugins: 
+npm install --save-dev gulp gulp-sass gulp-sourcemaps gulp-postcss autoprefixer cssnano gulp-concat gulp-terser gulp-imagemin
+
+Resources: https://gulpjs.com/docs/en/getting-started/quick-start https://postcss.org/
+
+
+
+1.npm init
+  npm init -y 
+2.Install Gulp Globally
+  npm i gulp-cli -g
+3.Install Gulp as dev dependency(The node_modules will be created)
   npm i gulp -D
-- Create gulpfile.js
-- Gulps dependencies
+4.Create gulpfile.js
+5.Gups dependencies
   npm i --save-dev gulp-imagemin
   npm i node-sass gulp-sass --save-dev
   npm i --save-dev gulp-sourcemaps gulp-concat gulp-terser
-  npm i -D gulp-babel @babel/core @babel/preset-env
+  npm i -D  gulp-babel webpack-stream @babel/core @babel/preset-env
   npm i -D gulp-plumber
   npm i -D browser-sync 
-  
-
-//Frontend
-- Add normalize
-- Create scss/styles.scss and css/styles.css Folders
-- Search icons: Fontastic
-- Search fonts: google
-- create favicon: https://favicon.io/favicon-generator/
-  Background: square, Lemonada, font-size:60
-- Search images
-
-
-scss
-  |- base
-    | _mixin.scs
-    | _varibles.scss
-    | _typo.scss
-  |- components/
-    | _base.scss
-    | _buttons.scss
-    | _layout.scss
-    | _nav-menu.scss
-  | _normalize.scss
-  | _styles.scss 
-
-

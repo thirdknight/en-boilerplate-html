@@ -1,5 +1,5 @@
 {
-  "name": "b-html-boilerplate-edi",
+  "name": "test-gulp-boilerplate",
   "version": "1.0.0",
   "description": "This is a boilerplate for a Gulp files If you are lazy like me and are always on the watch out of how you can optimize your workflow as a web developer this is the right video for you.  Today we are going to learn what Gulp is and how you can use it to avoid boring repetitive steps especially in regards to deploying a html css javascript website.",
   "main": "gulpfile.js",
