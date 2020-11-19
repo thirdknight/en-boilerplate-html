@@ -96,8 +96,8 @@ function buildScripts() {
   .pipe(sourcemaps.init())
   .pipe(concat('scripts.js'))
   .pipe(terser())
-  .pipe(sourcemaps.write('../../src/sourcemaps'))
-  .pipe(dest('build/js'))
+  .pipe(sourcemaps.write('../sourcemaps'))
+  .pipe(dest(buildDir + 'js'))
   .pipe(browsersync.reload({ stream: true }));
 }
 
