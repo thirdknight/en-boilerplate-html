@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.12.3",
+    "@babel/core": "^7.12.10",
     "@babel/plugin-transform-for-of": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.5",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-json": "^4.1.0",
@@ -20,7 +20,7 @@
     "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
     "beeper": "^1.1.1",
-    "browser-sync": "^2.26.13",
+    "browser-sync": "^2.26.14",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-plugin-jam3": "^0.2.3",
@@ -28,6 +28,7 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-better-rollup": "^4.0.1",
+    "gulp-concat": "^2.6.1",
     "gulp-eslint": "^6.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-minify": "^3.1.0",
@@ -36,14 +37,15 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-terser": "^2.0.1",
+    "node-sass": "^5.0.0",
     "normalize-scss": "^7.0.1",
     "rollup": "^1.31.1",
     "rollup-plugin-babel": "^4.4.0",
     "timeago.js": "^4.0.2",
-    "webpack-stream": "^6.1.1"
+    "webpack-stream": "^6.1.2"
   },
   "dependencies": {
-    "gulp-concat": "^2.6.1",
-    "gulp-terser": "^2.0.0"
+    "normalize.css": "^8.0.1"
   }
 }

@@ -14,5 +14,5 @@
 /*!****************************************************************************************!*\
   !*** multi ./src/js/scripts.js ./src/js/base/variables.js ./src/js/components/test.js ***!
   \****************************************************************************************/
-/*! no static exports found */function(e,t,n){n(/*! /Users/edinson/Sites/b-html-boilerplate-edi/src/js/scripts.js */"./src/js/scripts.js"),n(/*! /Users/edinson/Sites/b-html-boilerplate-edi/src/js/base/variables.js */"./src/js/base/variables.js"),e.exports=n(/*! /Users/edinson/Sites/b-html-boilerplate-edi/src/js/components/test.js */"./src/js/components/test.js")}});
+/*! no static exports found */function(e,t,n){n(/*! /Users/edinson/Sites/en-boilerplate-html/src/js/scripts.js */"./src/js/scripts.js"),n(/*! /Users/edinson/Sites/en-boilerplate-html/src/js/base/variables.js */"./src/js/base/variables.js"),e.exports=n(/*! /Users/edinson/Sites/en-boilerplate-html/src/js/components/test.js */"./src/js/components/test.js")}});
 //# sourceMappingURL=../sourcemaps/scripts.js.map
