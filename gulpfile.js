@@ -1,5 +1,5 @@
 // config
-const localUrl = 'localhost/b-html-boilerplate-edi/build';
+const localUrl = 'localhost/en-boilerplate-html/build';
 const srcDir = './src/';
 const buildDir = './build/';
 
