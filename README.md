@@ -47,7 +47,8 @@ Resources: https://gulpjs.com/docs/en/getting-started/quick-start https://postcs
   npm i --save-dev gulp-sourcemaps gulp-concat gulp-terser
   npm i -D  gulp-babel webpack-stream @babel/core @babel/preset-env
   npm i -D gulp-plumber
-  npm i -D browser-sync 
+  npm i -D browser-sync
+  npm i normalize.css
 
   Frontend:
 - Generate icon: https://favicon.io/favicon-generator/
