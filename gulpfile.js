@@ -1,5 +1,5 @@
 // config
-const localUrl = 'localhost/en-boilerplate-html/build';
+const localUrl = 'localhost/en-boilerplate-html';
 const srcDir = './src/';
 const buildDir = './build/';
 
@@ -54,12 +54,6 @@ const postcssPlugins = [
   autoprefixer(),
   cssnano()
 ];
-
-// Copy html
-function copyHtml() {
-  return src(srcDir + '*.html')
-  .pipe(gulp.dest(buildDir));
-}
 
 // Compress Imgen
 function copyImages() {
@@ -145,11 +139,10 @@ function browserSync(done) {
 //   })
 // }
 
-exports.copyHtml = copyHtml;
 exports.copyImages = copyImages;
 exports.copyFonts = copyFonts;
 exports.sass = buildStyles; // $ gulp sass
 exports.buildScripts = buildScripts; //gulp buildScripts
 exports.watch = parallel(watchCSS, watchJS, browserSync); // $gulp watch
 
-exports.default = parallel(copyHtml, copyImages, copyFonts, watchCSS, watchJS, browserSync); // $gulp
+exports.default = parallel(copyImages, copyFonts, watchCSS, watchJS, browserSync); // $gulp
